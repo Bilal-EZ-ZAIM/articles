@@ -19,6 +19,10 @@ if (isset($_POST['passwords'])) {
     $user->login();
 }
 
+if(isset($_POST["logout"])){
+    $user->logout();
+}
+
 
 
 

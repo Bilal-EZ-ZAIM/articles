@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +13,11 @@
     <link rel="stylesheet" href="./includs/index.css">
 </head>
 <style>
-     main {
+    main {
         background-color: #eaeaea;
-     }
-    main .contenr section  {
+    }
+
+    main .contenr section {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -22,12 +28,13 @@
         font-size: 22px;
         color: #073b3b;
         font-weight: bold;
-        font-family: system-ui,'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     }
-    main .contenr section button{
+
+    main .contenr section button {
         padding: 10px 20px;
         color: #fff;
-        background-color:  #073b3b;
+        background-color: #073b3b;
         font-size: 22px;
         border-radius: 10px;
     }

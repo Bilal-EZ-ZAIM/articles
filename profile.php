@@ -1,6 +1,13 @@
 <?php
 session_start();
+
+if ($_SESSION["id_user"] === null) {
+    header("location: /article/index.php");
+}
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +15,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>articels</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./includs/index.css">
 </head>
 <style>
@@ -39,46 +46,49 @@ session_start();
 
     main .contenr form input {
         height: 5vh;
-        width: 300px;
-        padding: 5px;
+        width: 500px;
+        padding: 10px;
         outline: none;
         font-size: 20px;
         border-radius: 5px;
     }
-
+    main .contenr form textarea{
+        outline: none;
+        width: 500px;
+        padding: 10px;
+        font-size: 18px;
+        height: 40vh;
+        border-radius: 5px;
+    }
     main .contenr form input:last-child {
         width: 200px;
         color: #fff;
         background-color: #073b3b;
         cursor: pointer;
+        padding: 0;
 
     }
 
-    main .contenr section button {
-        padding: 10px 20px;
-        color: #fff;
-        background-color: #073b3b;
-        font-size: 22px;
-        border-radius: 10px;
-    }
+   
 </style>
 
 <body>
     <?php
-    require_once("./includs/header.php");
+    require("./includs/header.php");
     ?>
+  
     <main>
         <div class="contenr">
-        <form action="http://localhost/article/app/reg.php" method="POST">
-                <input type="text" name="username" placeholder="username">
-                <input type="email" name="email" placeholder="email">
-                <input type="password" name="password" placeholder="password">
-                <input type="submit" name="passwords">
+        <form action="./app/art.php" method="POST">
+                <input type="text" name="titer" placeholder="entere titer">
+                <textarea name="article" id="" placeholder="articles"></textarea>
+                <input type="submit" name="ajout_articls" value="add articles">
             </form>
         </div>
     </main>
+  
     <?php
-    require_once("./includs/footer.php");
+    include("./includs/footer.php");
     ?>
 
 </body>

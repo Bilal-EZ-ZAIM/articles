@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +62,7 @@
     ?>
     <main>
         <div class="contenr">
-            <form action="http://localhost/article/app/reg.php" method="POST">
+            <form action="./reg.php" method="POST">
                 <input type="text" name="first_name" placeholder="first name">
                 <input type="text" name="last_name" placeholder="last name">
                 <input type="text" name="username" placeholder="username">
