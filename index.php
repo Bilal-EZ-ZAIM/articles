@@ -15,6 +15,7 @@ session_start();
 <style>
     main {
         background-color: #eaeaea;
+
     }
 
     main .contenr section {
@@ -38,6 +39,30 @@ session_start();
         font-size: 22px;
         border-radius: 10px;
     }
+
+    .articles {
+        height: auto;
+        display: grid;
+        gap: 50px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding-bottom: 40px;
+
+    }
+
+    .articles div {
+        background-color: #c9d7da;
+        border-radius: 8px;
+        height: 30vh;
+        padding: 20px;
+        font-weight: bold;
+        font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .articles .title{
+        color: #004352;
+        font-size: 22px;
+        margin-bottom: 5px;
+
+    }
 </style>
 
 <body>
@@ -50,6 +75,24 @@ session_start();
                 <p class="p">Bonjour , soyez la bienvenue sur votre site</p>
                 <button>Articles</button>
             </section>
+            <div class="articles">
+                <?php
+                require("./app/articles.php");
+                $data = new Article();
+                $aff = $data->affichage();
+                foreach ($aff as $art) {
+                    echo "
+                   <div>
+                   <p class='title'> $art[titre] <p>
+                   <p> $art[contenu] <p>
+                   
+                   </div>
+                   ";
+                }
+
+
+                ?>
+            </div>
         </div>
     </main>
     <?php

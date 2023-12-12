@@ -99,7 +99,6 @@ class Users
    public function logout()
     {
         $_SESSION["id_user"] = null;
-        echo"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
         header("location: /article/index.php");
     }
    
